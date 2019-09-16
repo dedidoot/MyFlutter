@@ -10,26 +10,34 @@ class UserItemView extends Widget {
 
   @override
   Element createElement() {
-    return Card(
-      elevation: 0,
-      color: hexToColor("#82a2ff"),
-      margin: EdgeInsets.all(16),
-      child: Container(
-        padding: EdgeInsets.all(16),
-        child: Column(
-          children: <Widget>[
-            Text(
-              "Username $datane",
-              style: TextStyle(color: Colors.white, fontSize: 16, fontStyle: FontStyle.italic),
-            ),
-            Container(
-              margin: EdgeInsets.only(top: 5),
-              child: Text(
-                "xw wxwx $datane",
-                style: TextStyle(color: Colors.white, fontSize: 10),
+    return GestureDetector(
+      onTap: () {
+        print("ooiit $datane");
+      },
+      child: Card(
+        elevation: 0,
+        color: hexToColor("#82a2ff"),
+        margin: EdgeInsets.all(16),
+        child: Container(
+          padding: EdgeInsets.all(16),
+          child: Column(
+            children: <Widget>[
+              Text(
+                "Username $datane",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16,
+                    fontStyle: FontStyle.italic),
               ),
-            )
-          ],
+              Container(
+                margin: EdgeInsets.only(top: 5),
+                child: Text(
+                  "xw wxwx $datane",
+                  style: TextStyle(color: Colors.white, fontSize: 10),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     ).createElement();
