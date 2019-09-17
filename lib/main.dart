@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'api/RestClient.dart';
 import 'helper/Color.dart';
 import 'view/UserItemView.dart';
 
@@ -20,6 +21,11 @@ class _MyAppState extends State<MyApp> {
     for (int i = 0; i < 1000; i++) {
       textView.add(UserItemView("Data ke $i"));
     }
+
+    RestClient.getSingleUser("2").then((onValue) {
+      print("user id: " + onValue.id);
+      print("first name: " + onValue.firstName);
+    });
   }
 
   @override
